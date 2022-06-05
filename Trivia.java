@@ -107,9 +107,18 @@ public class Trivia
             }
         }
 
-        // Display the score
-        System.out.println("\nCorrect Answers: " + rightAnswers + " / " + SIZE);
-        System.out.println("Percent Score: " + (rightAnswers/SIZE * 100.0) + "%");
+        // To make the final score display look a little cleaner I decided to add a check to if the final score is a whole number omit the .0 (5/5 instead of 5.0/5 for example)
+        
+        if (rightAnswers % 1 == 0 ) {
+            int rightAnswersInt = (int)rightAnswers;
+            // Display the score
+            System.out.println("\nCorrect Answers: " + rightAnswersInt + " / " + SIZE);
+            System.out.println("Percent Score: " + (rightAnswers/SIZE * 100.0) + "%");
+        } else {
+            // Display the score
+            System.out.println("\nCorrect Answers: " + rightAnswers + " / " + SIZE);
+            System.out.println("Percent Score: " + (rightAnswers/SIZE * 100.0) + "%");
+        }
 
     }
 }
